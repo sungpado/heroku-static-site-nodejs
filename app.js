@@ -4,7 +4,8 @@ var http = require('http'),
 var app = connect()
   .use(connect.static('public'))
   .use(function(req, res){
-    res.end('hello world\n');
+    res.statusCode = 404;
+    res.end("Not found!");
   })
 
 var port = Number(process.env.PORT || 5000);
